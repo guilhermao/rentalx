@@ -7,6 +7,7 @@ interface ISpecificationRequest {
 
 class CreateSpecificationUseCase {
   constructor(private specificationsRepository: ISpecificationsRepository) {}
+
   execute({ name, description }: ISpecificationRequest): void {
     const specificationAlreadyExists =
       this.specificationsRepository.findSpecificationByName(name);
